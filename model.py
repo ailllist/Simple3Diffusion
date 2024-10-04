@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 class VarianceSchedule(nn.Module):
     """
-    Loss Function 의 학습과 직접적인 연관이 있는 Hyper-Parameter 의 집합.
+    A set of hyper-parameters that are directly related to the training of the Loss Function.
     """
 
     def __init__(self, num_steps=100, beta_1=1e-4, beta_T=0.02):
@@ -46,7 +46,7 @@ class VarianceSchedule(nn.Module):
 
 class InterNet(nn.Module):
     """
-    time information 을 단순히 Embedding 하기만 한다.
+    simply embeds the time information.
     """
     def __init__(self, dim_in, dim_out):
         super().__init__()
@@ -63,8 +63,8 @@ class InterNet(nn.Module):
 
 class SimpleNet(nn.Module):
     """
-    아주 단순한 UNet, Residual Connection 을 활용함.
-    Residual Connection 을 쓰던 말던 큰 차이는 없음
+    A very simple UNet utilizing Residual Connections.
+    Using Residual Connections does not make a significant difference.
     """
     def __init__(self):
         super().__init__()
@@ -90,7 +90,7 @@ class SimpleNet(nn.Module):
 
 class BoringNet(nn.Module):
     """
-    time information 을 Embedding 하지 않으면 잘 되지 않음을 보기 위함.
+    This is to demonstrate that the model does not perform well without embedding time information.
     """
     def __init__(self):
         super().__init__()
@@ -117,7 +117,7 @@ class BoringNet(nn.Module):
 class DiffusionPoint(nn.Module):
     """
     Point Diffusion.
-    Latent Shape 를 제하고 코드를 만듬. 본인은 코드를 적절히 지우기만 함.
+    The code is implemented by excluding the Latent Shape. I only removed unnecessary parts accordingly.
     """
     def __init__(self, net, var_sched: VarianceSchedule):
         super().__init__()

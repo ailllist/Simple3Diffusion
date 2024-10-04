@@ -39,7 +39,7 @@ def get_data_iterator(iterable):
 path = './data/shapenet.hdf5'
 cate = "airplane"
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-raw = False  # 모든 time step의 결과 보기 (저장 포함)
+raw = False  # View results for all time steps (including saving)
 
 train_dataset = ShapeNetCore(
     path=path,
@@ -89,10 +89,10 @@ def save_pcds(pcds: dict):
         vis.update_renderer()
 
         view_control = vis.get_view_control()
-        view_control.set_up([0, 1, 0])  # 카메라의 상향 벡터를 Y축으로 설정
-        view_control.set_front([1, 1, 1])  # 카메라가 Z축 위에서 아래로 향하도록 설정
-        view_control.set_lookat([0, 0, 0])  # 포인트 클라우드의 중심을 원점(0, 0, 0)으로 설정
-        view_control.set_zoom(0.5)  # 확대/축소 비율 조정
+        view_control.set_up([0, 1, 0])
+        view_control.set_front([1, 1, 1])
+        view_control.set_lookat([0, 0, 0])
+        view_control.set_zoom(0.5)
         vis.poll_events()
         vis.update_renderer()
         if os.path.exists("imgs"):
@@ -153,10 +153,10 @@ def test(it):  # Visualization
         vis.add_geometry(pcd2)
 
         view_control = vis.get_view_control()
-        view_control.set_up([0, 1, 0])  # 카메라의 상향 벡터를 Y축으로 설정
-        view_control.set_front([1, 1, 1])  # 카메라가 Z축 위에서 아래로 향하도록 설정
-        view_control.set_lookat([0, 0, 0])  # 포인트 클라우드의 중심을 원점(0, 0, 0)으로 설정
-        view_control.set_zoom(0.5)  # 확대/축소 비율 조정
+        view_control.set_up([0, 1, 0])
+        view_control.set_front([1, 1, 1])
+        view_control.set_lookat([0, 0, 0])
+        view_control.set_zoom(0.5)
         vis.run()
 
 if __name__ == '__main__':
