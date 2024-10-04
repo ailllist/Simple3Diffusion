@@ -3,7 +3,7 @@
 
 This code is a **simplified version of Diffusion Probabilistic Models for 3D Point Cloud Generation (**https://github.com/luost26/diffusion-point-cloud**)**.
 
-The purpose of this implementation is to help understand the basic flow of 3D Diffusion. Most of the code structure is identical to the original `diffusion-point-cloud implementation`. 
+The purpose of this implementation is to help understand the basic flow of 3D Diffusion. Most of the code structure is identical to the original `diffusion-point-cloud` implementation. 
 I have removed the parts related to Latent Shape from the original code and retained only the essential structure required for Diffusion to function.
 Additionally, since the main objective is to comprehend the Diffusion flow, the code is designed to work for a single category only.
 ### Objectives of this code:
