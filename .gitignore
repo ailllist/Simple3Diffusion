@@ -1,0 +1,12 @@
+
+.idea/
+
+__pycache__/
+
+data/shapenet.hdf5
+
+imgs/
+
+ref/
+
+test.py
